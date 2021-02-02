@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Untitled</title>
+
+</head>
+
+<body>
+<div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card container-fluid align-items-center">
+          <div class="card-body">
+            <h4 class="card-title">{{this.name}}</h4>
+            <h6 class="text-muted card-subtitle mb-2">{{this.status}}</h6>
+            <p class="card-text">{{this.status}}</p><a class="card-link" href="#">Link</a><a class="card-link" href="#">Link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+            <tr>
+              <th>bugid</th>
+              <th>bugstatus</th>
+              <th>userid</th>
+              <th>bugdesc</th>
+              <th>bugstatus</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let b of bug">
+              <td>{{b.bugId}}</td>
+              <td>{{b.bugStatus}}</td>
+              <td>{{b.userId}}</td>
+              <td>{{b.bugDesc}}</td>
+              <td>{{b.bugStatus}}</td>
+              <td><button class="btn btn-danger" (click)="delete(b.bugId,b.bugDesc)">delete</button></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+            <tr>
+
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <app-create-team></app-create-team>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+</html>
